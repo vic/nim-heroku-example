@@ -1,5 +1,5 @@
-# example.nim
-import jester, asyncdispatch, htmlgen, os, strutils
+import jester, asyncdispatch, os, strutils
+import htmlgen as h
 
 var settings = newSettings()
 
@@ -8,6 +8,6 @@ if existsEnv("PORT"):
 
 routes:
   get "/":
-    resp h1("Hello world")
+    resp h.p("Hello from ", a(href="http://github.com/vic/heroku-buildpack-nim", "Heroku Nim Buildpack"))
 
 runForever()
