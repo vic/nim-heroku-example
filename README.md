@@ -17,6 +17,7 @@ cd nim-heroku-example
 # Create a heroku app
 heroku create --stack cedar --buildpack https://github.com/vic/heroku-buildpack-nim.git
 
-# Deploy
+# Deploy using development version of Nim
+heroku config:set NIM_BRANCH=devel
 git push heroku master
 ```
